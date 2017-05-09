@@ -1,9 +1,10 @@
 #include <iostream>
 #include <Windows.h>
 #include "Chess.h"
+#include "HumVsHum.h"
 
 using namespace std;
-
+//POINT point = { 0,0 };//点类型变量，用来获取鼠标位置
 void setSystemWindow(){
     HWND hwnd = GetForegroundWindow();//获取到当前窗口
     SetWindowTextA(hwnd,"五子棋");//设置窗口标题
@@ -28,7 +29,26 @@ int main(){
     cin>>type;
 
     if(type==1){
+        system("cls");
+        HumVsHum hum;
 
+        while(true){
+            if(hum.isOver){
+                if(hum.isBlackWin){
+                    cout<<"黑方胜利！"<<endl;
+                }else if(hum.isWhiteWin){
+                    cout<<"白方胜利！"<<endl;
+                }else{
+                    cout<<"平局"<<endl;
+                }
+                break;
+            }
+
+            hum.put();
+            system("cls");
+            hum.showMap();
+            Sleep(1000);
+        }
     }else if(type==2){
 
         cout<< "请选择棋盘大小，如15，即15*15" << endl;

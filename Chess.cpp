@@ -36,7 +36,7 @@ using namespace std;
 
 //1是黑棋，2是白棋，0没有棋子
 
-POINT point = { 0,0 };//点类型变量，用来获取鼠标位置
+POINT point1 = { 0,0 };//点类型变量，用来获取鼠标位置
 
 Chess::Chess(int x,int y,int l){
     row = x;
@@ -588,9 +588,9 @@ void Chess::humPut(){
     MoveWindow(hwnd,0,0,x,y,true);
 
     //移动窗口位置
-    if(_getch()) GetCursorPos(&point);
-    int i = (point.y-38+8)/16 + 1,
-        j = (point.x-16+8)/16 + 1;
+    if(_getch()) GetCursorPos(&point1);
+    int i = (point1.y-38+8)/16 + 1,
+        j = (point1.x-16+8)/16 + 1;
     //cout << "当前i" << "当前j" << j << "当前鼠标x" << point.x << "当前坐标y" << point.y << endl;
 
     int oi,oj;
