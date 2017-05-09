@@ -38,7 +38,7 @@ using namespace std;
 
 POINT point = { 0,0 };//点类型变量，用来获取鼠标位置
 
-Chess::Chess(int x,int y){
+Chess::Chess(int x,int y,int l){
     row = x;
     col = y;
     isHum = true;
@@ -47,7 +47,7 @@ Chess::Chess(int x,int y){
 	minWin = new WinsCount[COUNT];
 	nearPointNum = 0;
 	availNum = 0;
-	level = 4;
+	level = l;
 
 	initWins();
     initMap();
@@ -612,5 +612,5 @@ void Chess::computerAI(){
 }
 
 
-
+//┌┐└┘├┤┬┴┼●○
 

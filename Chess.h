@@ -47,7 +47,7 @@ public:
 	int comRow,comCol;
 	int level;
 public:
-	Chess(int x, int y);
+	Chess(int x=15, int y=15,int l=2);
 	void initWins();
 	int initPlayerWins();
 	void initMap();
